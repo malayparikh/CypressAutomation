@@ -1,0 +1,30 @@
+Prerequest before install cypress :
+
+1. Install nodejs
+2. Set the system variable path for nodejs
+
+NODE_HOME : C/Program Files/nodejs
+3. Install VS code editor
+4. Create any new folder like "CypressProject" and select the folder in VS code editor
+5. Open the terminal in VS code editor and type the below command
+
+npm init
+npm install cypress --save-dev
+npx cypress open
+
+6. Create the folder under Cypress > Intergration > Examples
+
+7. Go to cypress.config.js file and update the "specPattern" path as per below :
+
+const { defineConfig } = require("cypress")
+
+module.exports = defineConfig({
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+    specPattern: "cypress/integration/examples/*.js",
+  },
+})
+
+8. Open new terminal and use the command : npx cypress open
